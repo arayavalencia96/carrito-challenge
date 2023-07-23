@@ -1,0 +1,349 @@
+{
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "HP 500",
+      "precio": 1,
+      "categoria": "Salud",
+      "descripcion": "Sube la vida del mago en 100 unidades",
+      "imagen": "http://localhost:3000/Icon1.png"
+    },
+    {
+      "id": 2,
+      "nombre": "Veneno somnoliento",
+      "precio": 1,
+      "categoria": "Veneno",
+      "descripcion": "Duerme al enemigo 3 turnos",
+      "imagen": "http://localhost:3000/Icon2.png"
+    },
+    {
+      "id": 3,
+      "nombre": "Escudo de fuego",
+      "precio": 2,
+      "categoria": "Proteccion",
+      "descripcion": "Resiste el daño de un ataque de agua",
+      "imagen": "http://localhost:3000/Icon3.png"
+    },
+    {
+      "id": 4,
+      "nombre": "Vigor shawarma",
+      "precio": 3,
+      "categoria": "Estamina",
+      "descripcion": "Aumenta 25 la estamina pero se pierde el siguiente turno en el baño por una diarrea feroz",
+      "imagen": "http://localhost:3000/Icon4.png"
+    },
+    {
+      "id": 5,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon5.png"
+    },
+    {
+      "id": 6,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon6.png"
+    },
+    {
+      "id": 7,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon7.png"
+    },
+    {
+      "id": 8,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon8.png"
+    },
+    {
+      "id": 9,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon9.png"
+    },
+    {
+      "id": 10,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon10.png"
+    },
+    {
+      "id": 11,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon11.png"
+    },
+    {
+      "id": 12,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon12.png"
+    },
+    {
+      "id": 13,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon13.png"
+    },
+    {
+      "id": 14,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon14.png"
+    },
+    {
+      "id": 15,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon15.png"
+    },
+    {
+      "id": 16,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon16.png"
+    },
+    {
+      "id": 17,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon17.png"
+    },
+    {
+      "id": 18,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon18.png"
+    },
+    {
+      "id": 19,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon19.png"
+    },
+    {
+      "id": 20,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon20.png"
+    },
+    {
+      "id": 21,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon21.png"
+    },
+    {
+      "id": 22,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon22.png"
+    },
+    {
+      "id": 23,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon23.png"
+    },
+    {
+      "id": 24,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon24.png"
+    },
+    {
+      "id": 25,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon25.png"
+    },
+    {
+      "id": 26,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon26.png"
+    },
+    {
+      "id": 27,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon27.png"
+    },
+    {
+      "id": 28,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon28.png"
+    },
+    {
+      "id": 29,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon29.png"
+    },
+    {
+      "id": 30,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon30.png"
+    },
+    {
+      "id": 31,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon31.png"
+    },
+    {
+      "id": 32,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon32.png"
+    },
+    {
+      "id": 33,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon33.png"
+    },
+    {
+      "id": 34,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon34.png"
+    },
+    {
+      "id": 35,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon35.png"
+    },
+    {
+      "id": 36,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon36.png"
+    },
+    {
+      "id": 37,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon37.png"
+    },
+    {
+      "id": 38,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon38.png"
+    },
+    {
+      "id": 39,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon39.png"
+    },
+    {
+      "id": 40,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon40.png"
+    },
+    {
+      "id": 41,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon41.png"
+    },
+    {
+      "id": 42,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon42.png"
+    },
+    {
+      "id": 43,
+      "nombre": "Piel de piedra",
+      "precio": 1,
+      "categoria": "Proteccion",
+      "descripcion": "Protege de los efectos de los venenos por los próximos 3 turnos",
+      "imagen": "http://localhost:3000/Icon43.png"
+    }
+  ],
+  "compras": []
+}
