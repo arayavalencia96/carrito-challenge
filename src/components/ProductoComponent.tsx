@@ -1,34 +1,24 @@
-interface Producto {
-  id?: number;
-  nombre: string;
-  categoria?: string;
-  descripcion: string;
-  imagen: string;
-  precio?: number;
-}
+import { Producto } from "../types/interface";
 
-const ProductoComponent: React.FC<Producto> = ({
-  imagen,
-  nombre,
-  descripcion,
-  precio,
-}) => {
+const ProductoComponent = ({ producto }: { producto: Producto }) => {
   return (
     <div className="max-w-sm bg-stone-700 rounded-xl overflow-hidden shadow-lg mb-5">
       <figure className="flex justify-center">
         <img
           className="w-1/2 h-48 object-cover rounded-lg"
-          src={imagen}
+          src={producto.imagen}
           alt="img"
         />
       </figure>
       <div className="px-6 py-4 flex justify-between mb-2">
-        <div className="font-bold text-white text-xl mb-2">{nombre}</div>
+        <div className="font-bold text-white text-xl mb-2">
+          {producto.nombre}
+        </div>
         <p className="px-1 font-bold text-white py-1 rounded-xl border border-gray-300 ml-1 bg-secondary-dark">
-          {precio} Gema
+          {producto.precio} Gema
         </p>
       </div>
-      <p className="text-white text-center">{descripcion}</p>
+      <p className="text-white text-center">{producto.descripcion}</p>
       <div className="px-6 pt-4 pb-2">
         <input
           type="button"

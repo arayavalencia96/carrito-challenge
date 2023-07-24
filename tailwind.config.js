@@ -6,12 +6,12 @@ module.exports = {
       colors: {
         darkMode: true,
         primary: {
-          DEFAULT: "#6D28D9", // Púrpura
-          dark: "#4C1D95", // Púrpura oscuro
+          DEFAULT: "#6D28D9",
+          dark: "#4C1D95",
         },
         secondary: {
-          DEFAULT: "#F472B6", // Rosa
-          dark: "#D53F8C", // Rosa oscuro
+          DEFAULT: "#F472B6",
+          dark: "#D53F8C",
         },
       },
     },
