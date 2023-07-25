@@ -1,6 +1,8 @@
+import { useCarrito } from "../hooks/useCarrito";
 import { Producto } from "../types/interface";
 
 const ProductoComponent = ({ producto }: { producto: Producto }) => {
+  const { addToCarrito } = useCarrito();
   return (
     <div className="max-w-sm bg-stone-700 rounded-xl overflow-hidden shadow-lg mb-5">
       <figure className="flex justify-center">
@@ -23,6 +25,7 @@ const ProductoComponent = ({ producto }: { producto: Producto }) => {
         <input
           type="button"
           value="Agregar"
+          onClick={() => addToCarrito(producto)}
           className="w-full btn btn-lg cursor-pointer font-bold hover:bg-primary px-2 text-white py-1 rounded-lg border border-gray-300 mr-2 bg-primary-dark"
         />
       </div>

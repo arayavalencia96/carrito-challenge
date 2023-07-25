@@ -16,3 +16,12 @@ export interface FilterType {
   category: string;
   price: number;
 }
+
+export interface ProductoCarrito
+  extends Pick<Producto, "imagen" | "nombre" | "id"> {}
+
+export interface CarritoContextType {
+  carrito: ProductoCarrito[];
+  addToCarrito: (producto: ProductoCarrito) => void;
+  deleteAll: () => void;
+}

@@ -4,6 +4,7 @@ import { HeaderComponent } from "./components/HeaderComponent";
 import { ListadoProductosComponent } from "./components/ListadoProductosComponent";
 import { Producto } from "./types/interface";
 import { useFilters } from "./hooks/useFilters";
+import { CarritoProvider } from "./context/carrito";
 
 function App() {
   const [productos, setProductos] = useState<Producto[]>([]);
@@ -20,21 +21,23 @@ function App() {
   }, []);
 
   return (
-    <div
-      className="min-h-full bg-fixed"
-      style={{ backgroundImage: "url(background.webp)" }}
-    >
-      <HeaderComponent />
-      <div className="flex justify-center min-h-full">
-        <div className=" w-3/4 py-16">
-          {showCarrito ? (
-            <CarritoComponent />
-          ) : (
-            <ListadoProductosComponent productos={filteredProducts} />
-          )}
+    <CarritoProvider>
+      <div
+        className="min-h-full bg-fixed"
+        style={{ backgroundImage: "url(background.webp)" }}
+      >
+        <HeaderComponent />
+        <div className="flex justify-center min-h-full">
+          <div className=" w-3/4 py-16">
+            {showCarrito ? (
+              <CarritoComponent />
+            ) : (
+              <ListadoProductosComponent productos={filteredProducts} />
+            )}
+          </div>
         </div>
       </div>
-    </div>
+    </CarritoProvider>
   );
 }
 
