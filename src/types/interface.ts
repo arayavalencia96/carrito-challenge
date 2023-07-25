@@ -6,3 +6,13 @@ export interface Producto {
   imagen: string;
   precio: number;
 }
+
+export interface FilterContextType {
+  filters: FilterType;
+  setFilter: React.Dispatch<React.SetStateAction<FilterType>>;
+}
+
+export interface FilterType {
+  category: string;
+  price: number;
+}

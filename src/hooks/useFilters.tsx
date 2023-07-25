@@ -1,16 +1,15 @@
 import { useContext } from "react";
 import { Producto } from "../types/interface";
-import { FilterContext } from "../context/filters";
+import { FiltersContext } from "../context/filters";
 
 export function useFilters() {
-  const {filters, setFilter} = useContext(FilterContext);
+  const { filters, setFilter } = useContext(FiltersContext);
 
   const filterProducts = (productos: Producto[]) => {
     return productos.filter((producto) => {
       return (
         producto.precio >= filters.price &&
-        (filters.category === "all" ||
-          producto.categoria === filters.category)
+        (filters.category === "all" || producto.categoria === filters.category)
       );
     });
   };

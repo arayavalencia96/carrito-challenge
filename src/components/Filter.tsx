@@ -1,34 +1,55 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useFilters } from "../hooks/useFilters";
 
 const Filter = () => {
-  const [category, setCategory] = useState("all");
   const categories = [
     {
       id: 1,
-      name: "Salud",
+      name: "all",
     },
     {
       id: 2,
-      name: "Veneno",
+      name: "Salud",
     },
     {
       id: 3,
-      name: "Proteccion",
+      name: "Veneno",
     },
     {
       id: 4,
-      name: "Estamina",
+      name: "Proteccion",
     },
     {
       id: 5,
-      name: "Proteccion",
+      name: "Estamina",
     },
   ];
+  const { setFilter } = useFilters();
+  const [localFilters, setLocalFilters] = useState({
+    category: "all",
+    price: 0,
+  });
+
+  useEffect(() => {
+    setFilter(localFilters);
+  }, [localFilters, setFilter]);
 
   const handleChangeCategory = (
-    event: React.ChangeEvent<HTMLInputElement>
+    event: React.ChangeEvent<HTMLSelectElement>
   ) => {
-    setCategory(event.target.value);
+    const categoryValue = event.target.value;
+    setLocalFilters((prevState) => ({
+      ...prevState,
+      category: categoryValue,
+    }));
+  };
+
+  const handleChangePrice = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const priceValue = Number(event.target.value);
+    setLocalFilters((prevState) => ({
+      ...prevState,
+      price: priceValue,
+    }));
   };
 
   return (
@@ -36,20 +57,31 @@ const Filter = () => {
       <label htmlFor="category" className="mr-4 text-white">
         Filtros:
       </label>
-      {categories.map((category) => (
-        <label
-          key={category.id}
-          id="category"
-          className="cursor-pointer label mr-4 flex items-center"
-        >
-          <span className="label-text mr-1 font-bold">{category.name}</span>
-          <input
-            type="checkbox"
-            onChange={handleChangeCategory}
-            className="cursor-pointer form-checkbox h-4 w-4 rounded-xl border-2 focus:ring-red-400"
-          />
+      <select
+        id="category"
+        onChange={handleChangeCategory}
+        value={localFilters.category}
+      >
+        {categories.map((category) => (
+          <option key={category.id} value={category.name}>
+            {category.name}
+          </option>
+        ))}
+      </select>
+      <div>
+        <label className="mr-4 text-white" htmlFor="price">
+          Precio a partir de:
         </label>
-      ))}
+        <input
+          type="range"
+          id="price"
+          min="0"
+          max="5"
+          onChange={handleChangePrice}
+          value={localFilters.price}
+        />
+        <span>${localFilters.price}</span>
+      </div>
     </div>
   );
 };

@@ -1,24 +1,15 @@
-import React, { createContext, useState, ReactNode } from "react";
+import { createContext, useState, ReactNode } from "react";
+import { FilterContextType, FilterType } from "../types/interface";
 
-interface FilterType {
-  category: string;
-  price: number;
-}
-
-interface FilterContextType {
-  filters: FilterType;
-  setFilter: React.Dispatch<React.SetStateAction<FilterType>>;
-}
-
-export const FilterContext = createContext<FilterContextType>({
-  filters: { category: "all", price: 0 },
+export const FiltersContext = createContext<FilterContextType>({
+  filters: { category: "all", price: 1 },
   setFilter: () => {},
 });
 
 export const FilterProvider = ({ children }: { children: ReactNode }) => {
   const [filters, setFilter] = useState<FilterType>({
     category: "all",
-    price: 0,
+    price: 1,
   });
 
   const contextValue: FilterContextType = {
@@ -27,8 +18,8 @@ export const FilterProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <FilterContext.Provider value={contextValue}>
+    <FiltersContext.Provider value={contextValue}>
       {children}
-    </FilterContext.Provider>
+    </FiltersContext.Provider>
   );
 };

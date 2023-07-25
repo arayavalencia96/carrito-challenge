@@ -8,7 +8,7 @@ import { useFilters } from "./hooks/useFilters";
 function App() {
   const [productos, setProductos] = useState<Producto[]>([]);
   const [showCarrito, setShowCarrito] = useState(false);
-  const { filterProducts, setFilter } = useFilters();
+  const { filterProducts } = useFilters();
 
   const filteredProducts = filterProducts(productos);
 
