@@ -1,17 +1,61 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CarritoContext } from "../context/carrito";
 import { useCarrito } from "../hooks/useCarrito";
+import { GemasContext } from "../context/gemas";
+import { ProductoCarrito } from "../types/interface";
 
 export const CarritoComponent = () => {
+  const { addGem } = useContext(GemasContext);
   const { carrito, setNewCart } = useCarrito();
   const { showCart, setShowCart } = useContext(CarritoContext);
+  const [itemsComprados, setItemsComprados] = useState<number[]>([]);
+  const [realizarCompra, setRealizarCompra] = useState(false); // Nuevo estado para controlar la compra
+
+  const keepValueItems = () => {
+    const items: number[] = carrito.map((item) => item.id);
+    setItemsComprados(items);
+    setRealizarCompra(true);
+  };
+
+  useEffect(() => {
+    if (realizarCompra) {
+      handleCompra();
+    }
+  }, [realizarCompra]);
+
+  const handleCompra = () => {
+    const url = "http://localhost:3001/compras";
+    const data = { itemsId: itemsComprados };
+
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        if (response.ok) {
+          console.log("Compra realizada con éxito!");
+        } else {
+          console.error("Error al realizar la compra.");
+        }
+      })
+      .catch((error) => {
+        console.error("Error en la solicitud:", error);
+      });
+  };
 
   const toggleShowCart = () => {
     setShowCart(!showCart);
   };
-  const handleEliminarProducto = (id: number) => {
-    const nuevoCarrito = carrito.filter((producto) => producto.id !== id);
+
+  const handleEliminarProducto = (product: ProductoCarrito) => {
+    const nuevoCarrito = carrito.filter(
+      (producto) => producto.id !== product.id
+    );
     setNewCart(nuevoCarrito);
+    addGem(product.precio);
   };
 
   return (
@@ -35,7 +79,7 @@ export const CarritoComponent = () => {
                 {producto.nombre}
               </span>
               <button
-                onClick={() => handleEliminarProducto(producto.id)}
+                onClick={() => handleEliminarProducto(producto)}
                 className="ml-auto text-gray-500 hover:text-red-500"
               >
                 &#10005;
@@ -47,6 +91,7 @@ export const CarritoComponent = () => {
       <input
         type="button"
         value="Comprar"
+        onClick={() => keepValueItems()}
         className="w-full btn btn-lg cursor-pointer font-bold hover:bg-primary px-2 text-white py-1 rounded-lg border border-gray-300 mr-2 bg-primary-dark"
       />
     </div>
