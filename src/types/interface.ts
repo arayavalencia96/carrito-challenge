@@ -37,4 +37,5 @@ export interface GemasContextType {
   gemas: number;
   subtractGem: (valorGema: number) => void;
   addGem: (valorGema: number) => void;
+  resetGemas: () => void;
 }
