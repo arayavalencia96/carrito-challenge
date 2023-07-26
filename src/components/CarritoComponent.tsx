@@ -5,11 +5,11 @@ import { GemasContext } from "../context/gemas";
 import { ProductoCarrito } from "../types/interface";
 
 export const CarritoComponent = () => {
-  const { addGem } = useContext(GemasContext);
-  const { carrito, setNewCart } = useCarrito();
+  const { addGem, resetGemas } = useContext(GemasContext);
+  const { carrito, setNewCart, deleteAll } = useCarrito();
   const { showCart, setShowCart } = useContext(CarritoContext);
   const [itemsComprados, setItemsComprados] = useState<number[]>([]);
-  const [realizarCompra, setRealizarCompra] = useState(false); // Nuevo estado para controlar la compra
+  const [realizarCompra, setRealizarCompra] = useState(false);
 
   const keepValueItems = () => {
     const items: number[] = carrito.map((item) => item.id);
@@ -36,13 +36,16 @@ export const CarritoComponent = () => {
     })
       .then((response) => {
         if (response.ok) {
-          console.log("Compra realizada con éxito!");
+          alert("Compra realizada con éxito!");
+          toggleShowCart();
+          deleteAll();
+          resetGemas();
         } else {
-          console.error("Error al realizar la compra.");
+          alert("Error al realizar la compra.");
         }
       })
       .catch((error) => {
-        console.error("Error en la solicitud:", error);
+        alert("Error realizando la compra: " + error);
       });
   };
 

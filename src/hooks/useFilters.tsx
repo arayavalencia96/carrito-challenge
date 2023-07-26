@@ -9,7 +9,7 @@ export function useFilters() {
     return productos.filter((producto) => {
       return (
         producto.precio >= filters.price &&
-        (filters.category === "all" || producto.categoria === filters.category)
+        (filters.category === "Todos" || producto.categoria === filters.category)
       );
     });
   };

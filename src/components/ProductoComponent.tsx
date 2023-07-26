@@ -3,23 +3,23 @@ import { useCarrito } from "../hooks/useCarrito";
 import { Producto } from "../types/interface";
 import { GemasContext } from "../context/gemas";
 
-const ProductoComponent = ({ producto }: { producto: Producto }) => {
+const ProductoComponent = ({ pocion }: { pocion: Producto }) => {
   const { carrito, addToCarrito } = useCarrito();
   const { subtractGem } = useContext(GemasContext);
 
   const handleAddToCart = (producto: Producto) => {
-    const priceProduct = producto.precio;
-    addToCarrito(producto);
+    const priceProduct = pocion.precio;
+    addToCarrito(pocion);
     subtractGem(priceProduct);
   };
 
-  const lookUpId = (producto: Producto) => {
-    return carrito.includes(producto);
+  const lookUpId = (product: Producto) => {
+    return carrito.includes(pocion);
   };
 
   const finishedGems = () => {
-    const totalGemsInCart = carrito.reduce((total, producto) => {
-      return total + producto.precio;
+    const totalGemsInCart = carrito.reduce((total, prod) => {
+      return total + prod.precio;
     }, 0);
 
     return totalGemsInCart >= 3;
@@ -30,28 +30,26 @@ const ProductoComponent = ({ producto }: { producto: Producto }) => {
       <figure className="flex justify-center">
         <img
           className="w-1/2 h-48 object-cover rounded-lg"
-          src={producto.imagen}
+          src={pocion.imagen}
           alt="img"
         />
       </figure>
       <div className="px-6 py-4 flex justify-between mb-2">
-        <div className="font-bold text-white text-xl mb-2">
-          {producto.nombre}
-        </div>
+        <div className="font-bold text-white text-xl mb-2">{pocion.nombre}</div>
         <p className="px-1 font-bold text-white py-1 rounded-xl border border-gray-300 ml-1 bg-secondary-dark">
-          {producto.precio} Gema
+          {pocion.precio} Gema
         </p>
       </div>
-      <p className="text-white text-center">{producto.descripcion}</p>
+      <p className="text-white text-center">{pocion.descripcion}</p>
       <div className="px-6 pt-4 pb-2">
         <input
-          id={producto.nombre}
-          disabled={lookUpId(producto) || finishedGems()}
+          id={pocion.nombre}
+          disabled={lookUpId(pocion) || finishedGems()}
           type="button"
           value="Agregar"
-          onClick={() => handleAddToCart(producto)}
+          onClick={() => handleAddToCart(pocion)}
           className={`w-full btn btn-lg font-bold px-2 text-white py-1 rounded-lg border border-gray-300 mr-2 ${
-            lookUpId(producto) || finishedGems()
+            lookUpId(pocion) || finishedGems()
               ? "bg-stone-500"
               : "bg-primary-dark hover:bg-primary cursor-pointer"
           }`}

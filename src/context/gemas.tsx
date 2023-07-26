@@ -5,6 +5,7 @@ export const GemasContext = createContext<GemasContextType>({
   gemas: 3,
   subtractGem: () => {},
   addGem: () => {},
+  resetGemas: () => {},
 });
 
 export const GemasProvider = ({ children }: { children: ReactNode }) => {
@@ -20,10 +21,15 @@ export const GemasProvider = ({ children }: { children: ReactNode }) => {
     setGemas(remainingGems);
   };
 
+  const resetGemas = () => {
+    setGemas(3);
+  };
+
   const contextValue: GemasContextType = {
     gemas,
     subtractGem,
-    addGem
+    addGem,
+    resetGemas,
   };
 
   return (

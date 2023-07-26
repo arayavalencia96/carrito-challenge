@@ -19,14 +19,12 @@ function App() {
       style={{ backgroundImage: "url(background.webp)" }}
     >
       <HeaderComponent />
-      <div className="flex justify-center min-h-full">
-        <div className=" w-3/4 py-16 flex justify-center">
-          {showCart ? (
-            <CarritoComponent />
-          ) : (
-            <ListadoProductosComponent productos={filteredProducts} />
-          )}
-        </div>
+      <div className="min-h-full py-16 flex justify-center">
+        {showCart ? (
+          <CarritoComponent />
+        ) : (
+          <ListadoProductosComponent pociones={filteredProducts} />
+        )}
       </div>
     </div>
   );
