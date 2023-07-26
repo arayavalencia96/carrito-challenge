@@ -4,15 +4,18 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { FilterProvider } from "./context/filters";
+import { CarritoProvider } from "./context/carrito";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <FilterProvider>
-      <App />
-    </FilterProvider>
+    <CarritoProvider>
+      <FilterProvider>
+        <App />
+      </FilterProvider>
+    </CarritoProvider>
   </React.StrictMode>
 );
 

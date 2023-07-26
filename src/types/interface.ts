@@ -24,4 +24,7 @@ export interface CarritoContextType {
   carrito: ProductoCarrito[];
   addToCarrito: (producto: ProductoCarrito) => void;
   deleteAll: () => void;
+  showCart: boolean;
+  setShowCart: (show: boolean) => void;
+  setNewCart: (producto: ProductoCarrito[]) => void;
 }

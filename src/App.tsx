@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { CarritoComponent } from "./components/CarritoComponent";
 import { HeaderComponent } from "./components/HeaderComponent";
 import { ListadoProductosComponent } from "./components/ListadoProductosComponent";
 import { Producto } from "./types/interface";
 import { useFilters } from "./hooks/useFilters";
-import { CarritoProvider } from "./context/carrito";
+import { CarritoContext } from "./context/carrito";
 
 function App() {
   const [productos, setProductos] = useState<Producto[]>([]);
-  const [showCarrito, setShowCarrito] = useState(false);
   const { filterProducts } = useFilters();
+  const { showCart } = useContext(CarritoContext);
 
   const filteredProducts = filterProducts(productos);
 
@@ -21,23 +21,21 @@ function App() {
   }, []);
 
   return (
-    <CarritoProvider>
-      <div
-        className="min-h-full bg-fixed"
-        style={{ backgroundImage: "url(background.webp)" }}
-      >
-        <HeaderComponent />
-        <div className="flex justify-center min-h-full">
-          <div className=" w-3/4 py-16">
-            {showCarrito ? (
-              <CarritoComponent />
-            ) : (
-              <ListadoProductosComponent productos={filteredProducts} />
-            )}
-          </div>
+    <div
+      className="min-h-full bg-fixed"
+      style={{ backgroundImage: "url(background.webp)" }}
+    >
+      <HeaderComponent />
+      <div className="flex justify-center min-h-full">
+        <div className=" w-3/4 py-16 flex justify-center">
+          {showCart ? (
+            <CarritoComponent />
+          ) : (
+            <ListadoProductosComponent productos={filteredProducts} />
+          )}
         </div>
       </div>
-    </CarritoProvider>
+    </div>
   );
 }
 
