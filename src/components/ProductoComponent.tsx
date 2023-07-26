@@ -1,8 +1,30 @@
+import { useContext } from "react";
 import { useCarrito } from "../hooks/useCarrito";
 import { Producto } from "../types/interface";
+import { GemasContext } from "../context/gemas";
 
 const ProductoComponent = ({ producto }: { producto: Producto }) => {
-  const { addToCarrito } = useCarrito();
+  const { carrito, addToCarrito } = useCarrito();
+  const { subtractGem } = useContext(GemasContext);
+
+  const handleAddToCart = (producto: Producto) => {
+    const priceProduct = producto.precio;
+    addToCarrito(producto);
+    subtractGem(priceProduct);
+  };
+
+  const lookUpId = (producto: Producto) => {
+    return carrito.includes(producto);
+  };
+
+  const finishedGems = () => {
+    const totalGemsInCart = carrito.reduce((total, producto) => {
+      return total + producto.precio;
+    }, 0);
+
+    return totalGemsInCart >= 3;
+  };
+
   return (
     <div className="max-w-sm bg-stone-700 rounded-xl overflow-hidden shadow-lg mb-5">
       <figure className="flex justify-center">
@@ -23,10 +45,16 @@ const ProductoComponent = ({ producto }: { producto: Producto }) => {
       <p className="text-white text-center">{producto.descripcion}</p>
       <div className="px-6 pt-4 pb-2">
         <input
+          id={producto.nombre}
+          disabled={lookUpId(producto) || finishedGems()}
           type="button"
           value="Agregar"
-          onClick={() => addToCarrito(producto)}
-          className="w-full btn btn-lg cursor-pointer font-bold hover:bg-primary px-2 text-white py-1 rounded-lg border border-gray-300 mr-2 bg-primary-dark"
+          onClick={() => handleAddToCart(producto)}
+          className={`w-full btn btn-lg font-bold px-2 text-white py-1 rounded-lg border border-gray-300 mr-2 ${
+            lookUpId(producto) || finishedGems()
+              ? "bg-stone-500"
+              : "bg-primary-dark hover:bg-primary cursor-pointer"
+          }`}
         />
       </div>
     </div>

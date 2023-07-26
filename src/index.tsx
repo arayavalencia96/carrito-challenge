@@ -5,17 +5,23 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { FilterProvider } from "./context/filters";
 import { CarritoProvider } from "./context/carrito";
+import { GemasProvider } from "./context/gemas";
+import { ProductProvider } from "./context/products";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <CarritoProvider>
-      <FilterProvider>
-        <App />
-      </FilterProvider>
-    </CarritoProvider>
+    <ProductProvider>
+      <GemasProvider>
+        <CarritoProvider>
+          <FilterProvider>
+            <App />
+          </FilterProvider>
+        </CarritoProvider>
+      </GemasProvider>
+    </ProductProvider>
   </React.StrictMode>
 );
 

@@ -3,7 +3,7 @@ import { CarritoContextType } from "../types/interface";
 import { ProductoCarrito } from "../types/interface";
 
 export const CarritoContext = createContext<CarritoContextType>({
-  carrito: [{ id: 1, nombre: "", imagen: "" }],
+  carrito: [{ id: 1, nombre: "", imagen: "", precio: 0 }],
   addToCarrito: () => {},
   deleteAll: () => {},
   showCart: false,

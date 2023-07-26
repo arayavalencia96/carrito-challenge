@@ -1,24 +1,17 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { CarritoComponent } from "./components/CarritoComponent";
 import { HeaderComponent } from "./components/HeaderComponent";
 import { ListadoProductosComponent } from "./components/ListadoProductosComponent";
-import { Producto } from "./types/interface";
 import { useFilters } from "./hooks/useFilters";
 import { CarritoContext } from "./context/carrito";
+import { useProducts } from "./hooks/useProducts";
 
 function App() {
-  const [productos, setProductos] = useState<Producto[]>([]);
+  const { getProducts } = useProducts();
   const { filterProducts } = useFilters();
   const { showCart } = useContext(CarritoContext);
 
-  const filteredProducts = filterProducts(productos);
-
-  useEffect(() => {
-    fetch("http://localhost:3001/productos")
-      .then((response) => response.json())
-      .then((data) => setProductos(data))
-      .catch((error) => console.error("Error fetching data:", error));
-  }, []);
+  const filteredProducts = filterProducts(getProducts);
 
   return (
     <div
